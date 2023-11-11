@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    border: 2px solid rgb(231, 231, 235);
+    border-radius: 20px;
+    width: 350px;
+    height: 404.31px;
+}
+
+.registro {
+    padding: 40px 44px 8px;
+}
+
+.registro p {
+    font-size: 13.23px;
+    margin: 20px 0 20px;
+    color: rgb(51, 51, 51);
+}
+
+.registro img{
+    width: 110px;
+}
+.registro div {
+    margin-bottom: 10px;
+}
+.registro input {
+    width: 100%;
+    padding: 7px 35px;
+    border: 1px solid #BDBDBD;
+    border-radius: 7px;
+}
+form .grupInput i{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 7px;
+    font-size: 15px;
+} 
+
+.registro button {
+    background-color: rgb(47, 128, 237);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 30px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 11.76px;
+    margin: 6px 0 14px;
+}
+
+
+.conect {
+    text-align: center;
+}
+
+.conect img {
+    width: 34px;
+    margin: 0 5px;
+}
+
+.conect p {
+    font-size: 10.29px;
+    color: rgb(130, 130, 130);
+}
+
+.conect p:nth-child(1){
+    margin-bottom: 20px;
+}
+#enlace{
+    margin-top: 20px;
+}
+
+.conect a {
+    color: rgb(45, 156, 219); 
+    text-decoration: none; 
+}
