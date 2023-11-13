@@ -28,8 +28,9 @@ if (!isset($_SESSION["user"])) {
             $data = $res->fetch_all(MYSQLI_ASSOC);
 
             foreach ($data as $usuario) {
+                $imgBlob = base64_encode($usuario["foto"])
             ?>
-                <li><img src="#" alt="perfil"><a href="#"><?= $usuario["usuario"] ?></a>
+                <li><?php echo "<img src='data:image/*;base64,$imgBlob' height='35'/>" ?><p id="use"><?= $usuario["usuario"] ?></p></a>
                     <ul class="submenu">
                         <li><a href="#">My Profile</a></li>
                         <li><a href="#">Group Chat</a></li>
@@ -46,36 +47,39 @@ if (!isset($_SESSION["user"])) {
         <p>Basic info, like your name and photo</p>
 
         <div class="perfil">
-            <div>
-                <h2>Profile</h2>
-                <p>Some info may be visible to other people</p>
+            <div class="edit">
+                <div>
+                    <p style="font-size: 20px;">Profile</p>
+                    <p style="font-size: 11px;">Some info may be visible to other people</p>
+                </div>
+                <a href="../view/change.php?id=<?= $_SESSION["user"]["id"] ?>">Edit</a>
             </div>
-            <a href="../view/change.php?id=<?= $_SESSION["user"]["id"] ?>">Edit</a>
             <table>
 
                 <tr>
-                    <th>PHOTO</th>
-                    <td><?= $usuario["foto"] ?></td>
+                    <td id="foto">PHOTO</td>
+                    <td id="imag"><?php echo "<img src='data:image/*;base64,$imgBlob' height='72'/> " ?></td>
+                </tr>
+                <hr >
+                <tr>
+                    <td class="encabezado">NAME</td>
+                    <td class="result"><?= $usuario["usuario"] ?></td>
                 </tr>
                 <tr>
-                    <th>NAME</th>
-                    <td><?= $usuario["usuario"] ?></td>
+                    <td class="encabezado">BIO</td>
+                    <td class="result"><?= $usuario["bio"] ?></td>
                 </tr>
                 <tr>
-                    <th>BIO</th>
-                    <td><?= $usuario["bio"] ?></td>
+                    <td class="encabezado">PHONE</td>
+                    <td class="result"><?= $usuario["telefono"] ?></td>
                 </tr>
                 <tr>
-                    <th>PHONE</th>
-                    <td><?= $usuario["telefono"] ?></td>
+                    <td class="encabezado">EMAIL</td>
+                    <td class="result"><?= $usuario["email"] ?></td>
                 </tr>
                 <tr>
-                    <th>EMAIL</th>
-                    <td><?= $usuario["email"] ?></td>
-                </tr>
-                <tr>
-                    <th>PASSWORD</th>
-                    <td><?= $usuario["password"] ?></td>
+                    <td class="encabezado">PASSWORD</td>
+                    <td class="result"><?= $usuario["password"] ?></td>
                 </tr>
             <?php
             }

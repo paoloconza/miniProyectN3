@@ -17,6 +17,11 @@ body{
 
 .menu li, ul {
     list-style: none;
+    display: flex;
+    align-items: center;
+}
+#use{
+    padding: 10px;
 }
 
 .menu li a {
@@ -54,10 +59,11 @@ body{
     /* margin: 50px 200px 30px; */
     align-self: flex-start;
 }
-/* .centrar a{
-align-self: flex-start;
-} */
-
+#back{
+    text-decoration: none;
+    color: #2D9CDB;
+    margin-bottom: 15px;
+}
 .change{
     border: 2px solid rgb(231, 231, 235);
     border-radius: 20px;

@@ -20,15 +20,26 @@ $usuario = $res->fetch_assoc();
     <title>Document</title>
     <link rel="stylesheet" href="./change.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    
 </head>
 
 <body>
     <nav class="navegacion">
         <img src="../assets/devchallenges.svg" alt="logo">
         <div class="menu">
-            <li><img src="#" alt="perfil"><a href="#"><?php echo $_SESSION["user"]["usuario"] ?></a>
+        <?php
+            $id = $_SESSION["user"]["id"];
+            require_once "../config/database.php";
+            $res = $mysqli->query("select * from usuarios where id =$id");
+            $data = $res->fetch_all(MYSQLI_ASSOC);
+
+            foreach ($data as $usuario) {
+                $imgBlob = base64_encode($usuario["foto"])
+            ?>
+        <li><?php echo "<img src='data:image/*;base64,$imgBlob' height='35'/>" ?><p id="use"><?= $usuario["usuario"] ?></p></a>
+        <?php
+            }
+        ?>
                 <ul class="submenu">
                     <li><a href="#">My Profile</a></li>
                     <li><a href="#">Group Chat</a></li>
@@ -41,14 +52,14 @@ $usuario = $res->fetch_assoc();
         </div>
     </nav>
     <div class="centrar">
-        <a href="/view/info.php">&lt; Back</a>
+        <a id="back" href="/view/info.php">&lt; Back</a>
        <div class="change">
        <p>Change Info</p>
         <p id="subtitulo">Changes will be reflected to every services</p>
-        <form action="../edit/edit.php" method="post">
+        <form action="../edit/edit.php" method="post" enctype="multipart/form-data">
             <div>
                 <img src="../assets/user.svg" alt="perfil">
-                <input type="file" name="perfil" placeholder="CHANGE PHOTO">
+                <input type="file" accept="image/*" name="perfil">
             </div>
             <div class="grupinput">
                 <label for="">Name</label>

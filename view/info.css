@@ -18,12 +18,17 @@ body {
 
 .menu li, ul {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .menu li a {
     /* color: darkblue; */
     text-decoration: none;
     /* display: block; */
+}
+#use{
+    padding: 10px;
 }
 
 .submenu {
@@ -32,8 +37,8 @@ body {
     border: 1px solid rgb(224, 224, 224);
     border-radius: 10px;
     display: none;
-    /* margin-top: 20px; */
-    margin-left: -100px;
+    margin-top: 185px;
+    margin-left: -107px;
     padding: 10px;
 }
 
@@ -54,12 +59,62 @@ body {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
+.centrar > h1{
+ margin-bottom: 10px;
+}
+
+.centrar > p{
+    margin-bottom: 30px;
+}
 .perfil{
     border: 2px solid rgb(231, 231, 235);
     border-radius: 20px;    
     width: 624.42px;
     height: 430.21px;
-    padding: 28px 42px 30px;
+    /* padding: 28px 42px 30px; */
+}
+.perfil a{
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 10px;
+    padding: 8px 25px;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(130, 130, 130);
+    margin-top: 8px;
+    height: 32px;
+}
+.edit{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 37px;
+}
+
+table{
+    width: 100%;
+}
+
+#foto{
+    color: #BDBDBD;
+    font-size: 9px;
+    padding: 0 37px;
+}
+#imag{
+    color: #333333;
+    font-size: 14px;
+}
+
+.encabezado{
+    border-top: 1px solid rgb(231, 231, 235);
+    color: #BDBDBD;
+    font-size: 9px;
+    padding: 20px 37px;
+    width: 230px;
+}
+
+.result{
+    border-top: 1px solid rgb(231, 231, 235);
+    font-size: 13px;
 }
 
 tr{

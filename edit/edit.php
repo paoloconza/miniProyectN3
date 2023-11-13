@@ -1,14 +1,16 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    var_dump($_POST);
+    
     $usuario = $_POST["name"];
     $bio = $_POST["bio"];
     $phone = $_POST["phone"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $perfil = $_POST["perfil"];
+    $tmp_name = $_FILES["perfil"]["tmp_name"];
+    // $perfil = $_POST["perfil"];
     // extract($_POST);
+    $perfil = addslashes(file_get_contents($tmp_name));
 
     session_start();
     $id = $_SESSION["user"]["id"];
@@ -16,5 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     require_once "../config/database.php";
     $mysqli->query("update usuarios set foto = '$perfil', usuario = '$usuario', bio = '$bio', telefono = '$phone', email = '$email', password = '$password' where id = $id");
+    // $mysqli->query("insert into usuarios (email, password) values($email, $password)");
     header("Location: /view/info.php");
 }

@@ -19,7 +19,7 @@
             <img src="./assets/devchallenges.svg" alt="logo">
             <p><strong>Join thousands of learners from<br> around the world</strong></p>
             <p id="parrafo">Master web development by making real-life<br> projects. There are multiple paths for you to<br> choose</p>
-            <form action="/login_db.php" method="post">
+            <form action="./edit/registrardb.php" method="post">
                 <div class="grupInput">
                     <i class="fa-solid fa-envelope" style="color: #828282;"></i>
                     <input type="email" name="Email" placeholder="Email">
