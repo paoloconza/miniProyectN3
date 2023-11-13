@@ -4,14 +4,9 @@
     box-sizing: border-box;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-} */
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
 
 .navegacion {
     width: 100%;
@@ -50,4 +45,23 @@
 
 .menu li:hover .submenu{
     display: block;
+}
+
+.centrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.perfil{
+    border: 2px solid rgb(231, 231, 235);
+    border-radius: 20px;    
+    width: 624.42px;
+    height: 430.21px;
+    padding: 28px 42px 30px;
+}
+
+tr{
+    border-top: 1px solid black;
 }

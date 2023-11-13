@@ -4,21 +4,15 @@
     box-sizing: border-box;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-} */
+body{
+    font-family: 'Noto Sans', sans-serif;
+}
 
 .navegacion {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px 50px 10px;
-    /* background: blue; */
 }
 
 .menu li, ul {
@@ -26,18 +20,14 @@
 }
 
 .menu li a {
-    /* color: darkblue; */
     text-decoration: none;
-    /* display: block; */
 }
 
 .submenu {
     position: absolute;
-    /* background-color: aqua; */
     border: 1px solid rgb(224, 224, 224);
     border-radius: 10px;
     display: none;
-    /* margin-top: 20px; */
     margin-left: -100px;
     padding: 10px;
 }
@@ -45,9 +35,86 @@
 .submenu li a {
     display: block;
     padding: 12px 40px 12px 20px;
-    /* background-color: blueviolet; */
 } 
 
 .menu li:hover .submenu{
     display: block;
+}
+
+/* change info */
+.centrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    min-height: 100vh;
+    /* text-align: left; */
+    /* margin: 50px 200px 30px; */
+    align-self: flex-start;
+}
+/* .centrar a{
+align-self: flex-start;
+} */
+
+.change{
+    border: 2px solid rgb(231, 231, 235);
+    border-radius: 20px;
+    width: 845.91px;
+    height: 827.56px;
+    padding: 28px 42px 30px;
+}
+
+.change p{
+    font-size: 24px;
+    margin-top: 2px;
+    color: black;
+}
+#subtitulo{
+    font-size: 13px;
+    margin: 5px 0 20px;
+    color: #828282;
+}
+.change div{
+    padding-bottom: 24px;
+}
+.change img{
+    width: 72px;
+    height: 72px;
+}
+.change button{
+    width: 82px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2F80ED;
+    color: #FFFFFF;
+}
+.grupinput label{
+    display: block;
+    color: rgb(79, 79, 79);
+    font-size: 13px;
+}
+.grupinput input{
+    width: 416.93px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(130, 130, 130);
+    padding: 25px 17px;
+    /* padding-left: 17px; */
+    margin-top: 3px;
+}
+
+.grupinput input::placeholder{
+    color: rgb(189, 189, 189);
+}
+
+#bio{
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 3px;
+}
+#bio::placeholder{
+    color: rgb(189, 189, 189);
 }
